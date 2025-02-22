@@ -119,16 +119,5 @@ Key settings can be modified in `config/settings.py`:
 
 ## License
 
-MIT License - see LICENSE file for details
-
-## Acknowledgments
-
-- OpenAI for GPT models
-- Langchain for RAG implementation
-- Streamlit for the web interface
-- HuggingFace for embeddings
-
-## Support
-
-For support, please open an issue in the GitHub repository or contact [your-email].
+None
 
