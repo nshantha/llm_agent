@@ -42,19 +42,22 @@ OPENAI_API_KEY=<your_openai_api_key>
 
 ## Project Structure
 
-├── main.py # Main application entry point
-├── README.md # Project documentation
-├── requirements.txt # Project dependencies
+```
+project/
+├── main.py                  # Main application entry point
+├── README.md               # Project documentation
+├── requirements.txt        # Project dependencies
 ├── config/
-│ └── settings.py # Configuration settings
+│   └── settings.py        # Configuration settings
 ├── prompts/
-│ └── research_prompts.py # LLM prompt templates
+│   └── research_prompts.py  # LLM prompt templates
 ├── ui/
-│ ├── components.py # UI components
-│ └── session.py # Session state management
+│   ├── components.py      # UI components
+│   └── session.py         # Session state management
 └── utils/
-├── processor.py # PDF processing utilities
-└── rag.py # RAG pipeline implementation
+    ├── processor.py       # PDF processing utilities
+    └── rag.py            # RAG pipeline implementation
+```
 
 
 ## Usage
