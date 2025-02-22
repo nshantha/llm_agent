@@ -1,83 +1,131 @@
-# StudyMate AI 🚀
+# Research Paper Assistant 📚
 
-StudyMate AI is an intelligent study assistant that allows users to upload PDF lecture notes and ask questions about the content. It uses RAG (Retrieval Augmented Generation) with OpenAI's GPT models to provide accurate, context-aware answers.
+A Streamlit-based application that helps researchers understand academic papers using AI. The assistant can explain complex concepts, break down mathematical equations, and answer questions about research papers.
 
 ## Features
-- PDF document processing
-- Question-answering based on document content
-- Interactive chat interface
-- Uses advanced RAG pipeline for accurate responses
 
-## Prerequisites
-- Python 3+
-- OpenAI API key
+- 📄 PDF paper analysis
+- ⚡ Real-time question answering
+- 🔢 LaTeX equation rendering
+- 📊 Table extraction and analysis
+- 💬 Chat-based interface
+- 🧮 Mathematical notation support
 
 ## Installation
 
 1. Clone the repository:
-bash
-git clone <repository-url>
-cd studymate-ai
-
-2. Install dependencies:
-bash
-pip install -r requirements.txt
-
-3. Create a `.env` file in the project root and add your OpenAI API key:
 
 ```bash
-OPENAI_API_KEY=your_api_key_here
+git clone https://github.com/yourusername/research-paper-assistant.git
+cd research-paper-assistant
+```
+2. Create a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate # On Windows: venv\Scripts\activate
+```
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
 ```
 
+
+4. Set up environment variables:
+Create a `.env` file in the root directory with:
+
+```bash
+OPENAI_API_KEY=<your_openai_api_key>
+```
+
+
 ## Project Structure
-```
-studymate-ai/
-├── main.py              # Main Streamlit application
-├── utils/
-│   ├── processor.py    # PDF processing utilities
-│   └── rag.py          # RAG pipeline implementation
-├── .env                # Environment variables (not in git)
-├── requirements.txt    # Project dependencies
-└── README.md          # Project documentation
-```
+
+├── main.py # Main application entry point
+├── README.md # Project documentation
+├── requirements.txt # Project dependencies
+├── config/
+│ └── settings.py # Configuration settings
+├── prompts/
+│ └── research_prompts.py # LLM prompt templates
+├── ui/
+│ ├── components.py # UI components
+│ └── session.py # Session state management
+└── utils/
+├── processor.py # PDF processing utilities
+└── rag.py # RAG pipeline implementation
+
 
 ## Usage
 
-1. Start the Streamlit application:
+1. Run the application:
+
 ```bash
-streamlit run main.py --server.fileWatcherType none
+streamlit run main.py
 ```
 
-2. Open your web browser and navigate to the provided URL (typically http://localhost:8501)
+2. Upload a research paper (PDF format)
 
-3. Upload a PDF document and start asking questions!
+3. Ask questions about the paper in the chat interface
+
+## Features in Detail
+
+### PDF Processing
+- Extracts text and tables from research papers
+- Preserves mathematical equations and formatting
+- Handles complex LaTeX notation
+
+### Question Answering
+- Uses RAG (Retrieval Augmented Generation) for accurate responses
+- Maintains context across conversations
+- Provides precise equation explanations
+
+### UI Components
+- Clean, intuitive chat interface
+- LaTeX equation rendering
+- Progress indicators for processing
+- Helpful sidebar with suggestions
 
 ## Dependencies
+
 - streamlit
 - langchain
-- langchain-community
-- langchain-openai
-- langchain-huggingface
+- openai
+- pdfplumber
+- camelot-py
 - python-dotenv
-- PyPDF2
 - faiss-cpu
 - sentence-transformers
 
 ## Configuration
 
-The application can be configured through environment variables:
-- `OPENAI_API_KEY`: Your OpenAI API key (required)
+Key settings can be modified in `config/settings.py`:
+- Model parameters (temperature, etc.)
+- Embedding settings
+- Retrieval parameters
+- File handling options
 
-## Troubleshooting
+## Contributing
 
-If you encounter the PyTorch file watcher error, run Streamlit with:
-```bash
-streamlit run main.py --server.fileWatcherType none
-```
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-Or add to `.streamlit/config.toml`:
-```toml
-[server]
-fileWatcherType = "none"
-```
+## License
+
+MIT License - see LICENSE file for details
+
+## Acknowledgments
+
+- OpenAI for GPT models
+- Langchain for RAG implementation
+- Streamlit for the web interface
+- HuggingFace for embeddings
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact [your-email].
 
